@@ -5,22 +5,24 @@ const App = () => {
   const [isModal, setIsModal] = useState(false);
   return (
     <div>
-      {isModal && (
-        <Modal>
-          <h1>Title</h1>
-          <p>Description sdsj kljfkl sdjklfjs dlkfjlk</p>
+      <Modal
+        handler={showModal => (
+          <button onClick={showModal}>Open Modal</button>
+        )}
+      >
           <div>
-            <button onClick={() => setIsModal(false)}>Yes</button>
-            <button onClick={() => setIsModal(false)}>No</button>
+            <h1>Product 1</h1>
+            <div>
+              <Modal handler={showModal => (
+                <button onClick={showModal}>Delete</button>
+              )}>
+                <h1>Are you sure</h1>
+                <p>You really want to delete this product</p>
+              </Modal>
+            </div>
           </div>
-        </Modal>
-      )}
+      </Modal>
 
-        <div className="p-absolute">
-
-        </div>
-
-      <button onClick={() => setIsModal(true)}>Open Modal</button>
     </div>
   )
 }

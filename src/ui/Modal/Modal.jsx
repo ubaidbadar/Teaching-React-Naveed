@@ -1,29 +1,18 @@
-import styles from './Modal.module.scss';
-import ReactDOM from 'react-dom';
+import { useState } from 'react';
+import ModalWrapper from '../ModalWrapper/ModalWrapper';
 
-const Modal = ({ children, className = '', ...props }) => {
-    // const student = {
-    //     name: 'naveed',
-    //     rollNo: 215,
-    //     faculty: 'BS',
-    //     department: 'CS',
-    //     semester: '8th'
-    // }
 
-    // const { name, rollNo, ...studentModal } = student;
-    
-    // const student2 = {...studentModal, name: 'Ubaid Badar', rollNo: 227};
 
-    return ReactDOM.createPortal((
-        <div
-            className={`blur d-flex ${className} ai-center jc-center ${styles.root}`}
-            {...props}
-        >
-            <div className='bg-light p-5'>
-                {children}
-            </div>
-        </div>
-    ), document.getElementById('modals'))
+const Modal = ({ handler, ...props }) => {
+    const [isModal, setIsModal] = useState(false);
+    const showModal = () => setIsModal(true);
+    const hideModal = () => setIsModal(false);
+    return (
+        <>
+            {handler(showModal, hideModal)}
+            {isModal && <ModalWrapper hideModal={hideModal} {...props} />}
+        </>
+    );
 }
 
 export default Modal;
