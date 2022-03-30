@@ -1,0 +1,62 @@
+:root {
+    --primary-rgb: 66, 165, 245;
+    --light-rgb: 255, 255, 255;
+    --dark-rgb: 0, 0, 0;
+    --danger-rgb: 239, 83, 80;
+    --success-rgb: 77, 176, 80;
+    --grey-rgb: 189, 189, 189;
+
+    --primary: rgb(var(--primary-rgb));
+    --light: rgb(var(--light-rgb));
+    --dark: rgb(var(--dark-rgb));
+    --danger: rgb(var(--danger-rgb));
+    --success: rgb(var(--success-rgb));
+    --grey: rgb(var(--grey-rgb));
+
+    --app-height: 100vh;
+}
+
+
+
+
+.tx-primary {
+    color: var(--primary) !important;
+}
+.bg-primary {
+    background-color: var(--primary) !important;
+}
+
+.tx-light {
+    color: var(--light) !important;
+}
+.bg-light {
+    background-color: var(--light) !important;
+}
+
+.tx-dark {
+    color: var(--dark) !important;
+}
+.bg-dark {
+    background-color: var(--dark) !important;
+}
+
+.tx-danger {
+    color: var(--danger) !important;
+}
+.bg-danger {
+    background-color: var(--danger) !important;
+}
+
+.tx-grey {
+    color: var(--grey) !important;
+}
+.bg-grey {
+    background-color: var(--grey) !important;
+}
+
+.tx-success {
+    color: var(--success) !important;
+}
+.bg-success {
+    background-color: var(--success) !important;
+}
